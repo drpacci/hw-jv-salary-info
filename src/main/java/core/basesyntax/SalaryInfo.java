@@ -29,7 +29,8 @@ public class SalaryInfo {
                 LocalDate currentDate = LocalDate.parse(parts[DATE_INDEX], DATE_TIME_FORMATTER);
                 if (name.equals(parts[NAME_INDEX])) {
                     if (!currentDate.isBefore(from) && !currentDate.isAfter(to)) {
-                        salary += Integer.parseInt(parts[HOURS_INDEX]) * Integer.parseInt(parts[RATE_INDEX]);
+                        salary += Integer.parseInt(parts[HOURS_INDEX])
+                                * Integer.parseInt(parts[RATE_INDEX]);
                     }
                 }
             }
