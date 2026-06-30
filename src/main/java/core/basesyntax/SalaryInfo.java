@@ -19,10 +19,10 @@ public class SalaryInfo {
         salaryInfo.append("Report for period ")
                 .append(dateFrom)
                 .append(" - ")
-                .append(dateTo)
-                .append(System.lineSeparator());
+                .append(dateTo);
 
-        for (String name : names) {
+        for (int i = 0; i < names.length; i++) {
+            String name = names[i];
             int salary = 0;
             for (String datum : data) {
                 String[] parts = datum.split("\\s+");
@@ -34,10 +34,11 @@ public class SalaryInfo {
                     }
                 }
             }
-            salaryInfo.append(System.lineSeparator())
-                    .append(name)
-                    .append(" - ")
-                    .append(salary);
+            salaryInfo.append(name).append(" - ").append(salary);
+
+            if (i < names.length - 1) {
+                salaryInfo.append(System.lineSeparator());
+            }
         }
         return salaryInfo.toString();
     }
