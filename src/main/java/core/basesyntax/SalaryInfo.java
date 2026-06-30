@@ -34,10 +34,10 @@ public class SalaryInfo {
                     }
                 }
             }
-            salaryInfo.append(name)
+            salaryInfo.append(System.lineSeparator())
+                    .append(name)
                     .append(" - ")
-                    .append(salary)
-                    .append(System.lineSeparator());
+                    .append(salary);
         }
         return salaryInfo.toString();
     }
